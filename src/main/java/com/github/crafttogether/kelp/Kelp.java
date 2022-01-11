@@ -44,7 +44,7 @@ public class Kelp extends ListenerAdapter {
         readyConsumer = consumer;
     }
 
-    public void addListeners(EventListener... eventListeners) {
+    public static void addListeners(EventListener... eventListeners) {
         for (EventListener listener : eventListeners) {
             jda.addEventListener(listener);
         }
