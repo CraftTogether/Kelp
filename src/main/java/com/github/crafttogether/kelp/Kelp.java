@@ -13,13 +13,17 @@ import java.util.function.Consumer;
 public class Kelp extends ListenerAdapter {
 
     private static Kelp INSTANCE;
-    public static Boolean connected = false;
+    private static Boolean connected = false;
     private static JDA jda;
     private static Consumer<ReadyEvent> readyConsumer = null;
 
     public static Kelp getInstance() {
         if (INSTANCE == null) INSTANCE = new Kelp();
         return INSTANCE;
+    }
+
+    public boolean isConnected() {
+        return connected;
     }
 
     public JDA getClient() {
