@@ -54,9 +54,17 @@ processResources {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifactId = Project.getName()
-            artifact jar
-            from components.java
+            pom.withXml {
+                def dependenciesNode = asNode().appendNode('dependencies')
+                configurations.api.allDependencies.each {
+                    def dependencyNode = dependenciesNode.appendNode('dependency')
+                    dependencyNode.appendNode('groupId', it.group)
+                    dependencyNode.appendNode('artifactId', it.name)
+                    dependencyNode.appendNode('version', it.version)
+                }
+                artifactId = Project.getName()
+                from components.java
+            }
         }
     }
 }
