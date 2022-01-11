@@ -13,8 +13,8 @@ import java.util.function.Consumer;
 public class Kelp extends ListenerAdapter {
 
     private static Kelp INSTANCE;
-    public static Boolean connected = false;
-    public static JDA jda;
+    private static Boolean connected = false;
+    private static JDA jda;
     private static Consumer<ReadyEvent> readyConsumer;
 
     public static Kelp getInstance() {
@@ -22,8 +22,12 @@ public class Kelp extends ListenerAdapter {
         return INSTANCE;
     }
 
-    public JDA getClient() {
+    public static JDA getClient() {
         return jda;
+    }
+
+    public static boolean isConnected() {
+        return connected;
     }
 
     public void connect() throws LoginException, InterruptedException {

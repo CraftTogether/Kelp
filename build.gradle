@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.github.craftTogether'
-version = '1.0-SNAPSHOT-5'
+version = '1.0-SNAPSHOT-6'
 
 repositories {
     mavenCentral()
@@ -55,6 +55,7 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             artifactId = Project.getName()
+            artifact jar
             from components.java
         }
     }
