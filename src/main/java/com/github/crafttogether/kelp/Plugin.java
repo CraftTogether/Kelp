@@ -36,8 +36,7 @@ public final class Plugin extends JavaPlugin {
         Kelp.getInstance().disconnect();
     }
 
-    public static String get(String key) {
-        return plugin.getConfig().getString(key);
+    public static JavaPlugin getPlugin() {
+        return plugin;
     }
-
 }

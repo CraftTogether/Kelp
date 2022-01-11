@@ -23,7 +23,7 @@ public class Kelp extends ListenerAdapter {
     }
 
     public void connect() throws LoginException, InterruptedException {
-        jda = JDABuilder.createLight(Plugin.get("token"))
+        jda = JDABuilder.createLight(Plugin.getPlugin().getConfig().getString("token"))
                 .addEventListeners(INSTANCE)
                 .build()
                 .awaitReady();
