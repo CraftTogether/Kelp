@@ -15,7 +15,7 @@ public class Kelp extends ListenerAdapter {
     private static Kelp INSTANCE;
     public static Boolean connected = false;
     public static JDA jda;
-    private static Consumer<ReadyEvent> readyConsumer;
+    private static Consumer<ReadyEvent> readyConsumer = null;
 
     public static Kelp getInstance() {
         if (INSTANCE == null) INSTANCE = new Kelp();
@@ -41,7 +41,7 @@ public class Kelp extends ListenerAdapter {
     }
 
     public void onReady(@NotNull ReadyEvent event) {
-        readyConsumer.accept(event);
+        if (readyConsumer != null) readyConsumer.accept(event);
     }
 
     public static void onReady(Consumer<ReadyEvent> consumer) {
