@@ -1,10 +1,11 @@
 plugins {
     id 'java'
     id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'maven-publish'
 }
 
 group = 'com.github.craftTogether'
-version = '1'
+version = '1.0-SNAPSHOT-1'
 
 repositories {
     mavenCentral()
@@ -47,5 +48,14 @@ processResources {
     filteringCharset 'UTF-8'
     filesMatching('plugin.yml') {
         expand props
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = Project.getName()
+            from components.java
+        }
     }
 }
