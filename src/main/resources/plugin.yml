@@ -1,0 +1,7 @@
+name: Kelp
+version: '${version}'
+main: com.github.crafttogether.kelp.Plugin
+api-version: 1.18
+prefix: Kelp
+authors: [ Marian ]
+description: Single JDA instance
