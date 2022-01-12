@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.github.craftTogether'
-version = '1.0-SNAPSHOT-8'
+version = '1.0-SNAPSHOT-9'
 
 repositories {
     mavenCentral()

@@ -44,7 +44,8 @@ public class Kelp extends ListenerAdapter {
         jda.shutdown();
     }
 
-    public void onReady(@NotNull ReadyEvent event) {
+    public void onReady(ReadyEvent event) {
+        if (readyConsumer == null) return;
         readyConsumer.accept(event);
     }
 
