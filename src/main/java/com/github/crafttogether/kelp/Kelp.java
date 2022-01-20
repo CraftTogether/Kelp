@@ -2,6 +2,7 @@ package com.github.crafttogether.kelp;
 
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.events.ReadyEvent;
 import net.dv8tion.jda.api.hooks.EventListener;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -46,6 +47,7 @@ public class Kelp extends ListenerAdapter {
 
     public void onReady(ReadyEvent event) {
         if (readyConsumer == null) return;
+        event.getJDA().getPresence().setActivity(Activity.watching(Plugin.getPlugin().getServer().getName()));
         readyConsumer.accept(event);
     }
 
