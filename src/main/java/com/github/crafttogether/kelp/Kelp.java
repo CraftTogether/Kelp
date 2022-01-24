@@ -2,6 +2,7 @@ package com.github.crafttogether.kelp;
 
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.events.ReadyEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
@@ -19,19 +20,19 @@ public class Kelp extends ListenerAdapter {
     private static Boolean connected = false;
     private static List<ListenerAdapter> listeners = new ArrayList<>();
     private static JDA jda;
-    private static Consumer<ReadyEvent> readyConsumer = null;
+    private static Consumer<ReadyEvent> readyConsumer;
 
     public static Kelp getInstance() {
         if (INSTANCE == null) INSTANCE = new Kelp();
         return INSTANCE;
     }
 
-    public boolean isConnected() {
-        return connected;
+    public static JDA getClient() {
+        return jda;
     }
 
-    public JDA getClient() {
-        return jda;
+    public static boolean isConnected() {
+        return connected;
     }
 
     public void connect() throws LoginException, InterruptedException {
@@ -48,8 +49,10 @@ public class Kelp extends ListenerAdapter {
         jda.shutdown();
     }
 
-    public void onReady(@NotNull ReadyEvent event) {
-        if (readyConsumer != null) readyConsumer.accept(event);
+    public void onReady(ReadyEvent event) {
+        if (readyConsumer == null) return;
+        event.getJDA().getPresence().setActivity(Activity.watching(Plugin.getPlugin().getServer().getName()));
+        readyConsumer.accept(event);
     }
 
     public static void onReady(Consumer<ReadyEvent> consumer) {
