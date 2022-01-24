@@ -20,7 +20,7 @@ public class Kelp extends ListenerAdapter {
     private static Boolean connected = false;
     private static List<ListenerAdapter> listeners = new ArrayList<>();
     private static JDA jda;
-    private static Consumer<ReadyEvent> readyConsumer;
+    private static Consumer<ReadyEvent> readyConsumer = null;
 
     public static Kelp getInstance() {
         if (INSTANCE == null) INSTANCE = new Kelp();
