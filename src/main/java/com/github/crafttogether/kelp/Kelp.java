@@ -60,7 +60,9 @@ public class Kelp extends ListenerAdapter {
 
     public static void addListeners(EventListener... eventListeners) {
         if (jda != null) {
-            jda.addEventListener();
+            for (EventListener listener : eventListeners) {
+                jda.addEventListener(listener);
+            }
         }
 
         Collections.addAll(listeners, eventListeners);
