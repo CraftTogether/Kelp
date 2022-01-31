@@ -13,14 +13,16 @@ You can download the Kelp plugin from the [releases](https://github.com/CraftTog
 
 # Developers
 ### Gradle:
-```
+```gradle
 repositories {
     mavenCentral()
     maven {
         'https://jitpack.io'
     }
 }
+```
 
+```gradle
 dependencies {
     compileOnly 'com.github.CraftTogether:kelp:1.2-SNAPSHOT-3'
     compileOnly ('net.dv8tion:JDA:5.0.0-alpha.4') {
@@ -30,14 +32,16 @@ dependencies {
 ```
 
 ### Maven:
-```
+```xml
 <repositories>
     <repository>
         <id>jitpack.io</id>
         <url>https://jitpack.io</url>
     </repository>
 </repositories>
+```
 
+```xml
 <dependencies>
     <dependency>
         <groupId>com.github.CraftTogether</groupId>
