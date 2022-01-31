@@ -1,4 +1,4 @@
-package com.github.crafttogether.kelp;
+package xyz.crafttogether.kelp;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;

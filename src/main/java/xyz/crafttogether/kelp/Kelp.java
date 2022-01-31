@@ -1,4 +1,4 @@
-package com.github.crafttogether.kelp;
+package xyz.crafttogether.kelp;
 
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;

@@ -1,6 +1,6 @@
 name: Kelp
 version: '${version}'
-main: com.github.crafttogether.kelp.Plugin
+main: xyz.crafttogether.Plugin
 api-version: 1.18
 prefix: Kelp
 authors: [ Marian ]
