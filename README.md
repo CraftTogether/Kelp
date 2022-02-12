@@ -1,6 +1,5 @@
 [![](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/zSWjKVvfNy)
 [![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/CraftTogether) <BR>
-[![](https://jitpack.io/v/CraftTogether/Kelp.svg)](https://jitpack.io/#CraftTogether/Kelp)
 ![](https://img.shields.io/badge/Maintained%3F-yes-green.svg) <BR>
 [![](https://img.shields.io/github/downloads/CraftTogether/kelp/total.svg)](https://github.com/CraftTogether/kelp/releases)
 ![](https://img.shields.io/github/issues/CraftTogether/kelp.svg)
@@ -13,18 +12,19 @@ You can download the Kelp plugin from the [releases](https://github.com/CraftTog
 
 # Developers
 ### Gradle:
+Replace `VERSION` with the latest version
 ```gradle
 repositories {
     mavenCentral()
     maven {
-        'https://jitpack.io'
+        'https://repo.polarian.dev/repo'
     }
 }
 ```
 
 ```gradle
 dependencies {
-    compileOnly 'com.github.CraftTogether:kelp:1.2-SNAPSHOT-3'
+    compileOnly 'xyz.crafttogether:Kelp:VERSION'
     compileOnly ('net.dv8tion:JDA:5.0.0-alpha.4') {
         exclude module: 'opus-java'
     }
@@ -44,9 +44,9 @@ dependencies {
 ```xml
 <dependencies>
     <dependency>
-        <groupId>com.github.CraftTogether</groupId>
-        <artifactId>weg</artifactId>
-        <version>1.2-SNAPSHOT-3</version>
+        <groupId>xyz.crafttogether</groupId>
+        <artifactId>Kelp</artifactId>
+        <version>VERSION</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
