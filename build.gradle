@@ -4,7 +4,7 @@ plugins {
     id 'maven-publish'
 }
 
-group = 'com.github.craftTogether'
+group = 'xyz.crafttogether'
 version = '1.2-SNAPSHOT-4'
 
 repositories {
@@ -59,6 +59,31 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             from(components.java)
+            pom {
+                name = "kelp"
+                description = "A single instance of JDA for spigot"
+                developers {
+                    developer {
+                        name = "PolarianDev"
+                        email = "polariandev@protonmail.com"
+                    }
+                    developer {
+                        name = "Marian"
+                    }
+                }
+                licenses {
+                    license {
+                        name = "The Unlicense"
+                        url = "https://unlicense.org/"
+                    }
+                }
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            url = "https://repo.polarian.dev/repo"
         }
     }
 }
